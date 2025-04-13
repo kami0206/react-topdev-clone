@@ -40,7 +40,7 @@ const Footer = () => {
         {/* Logo và thông tin liên hệ */}
         <div className="mb-4 md:mb-0 w-full md:w-4/12">
           <img
-            src="public/assets/img/header/img_logo.png"
+            src="/assets/img/header/img_logo.png"
             alt="Logo"
             className="h-10 mb-2"
           />
@@ -55,7 +55,7 @@ const Footer = () => {
           <p className="text-sm mb-2">
             ĐKKD: 031 303 2338 - Cấp ngày: 27/11/2014
           </p>
-          <img src="public\assets\img\footer\img_validate_brand.png" />
+          <img src="\assets\img\footer\img_validate_brand.png" />
         </div>
 
         {/* Về TOPDev */}
@@ -101,42 +101,42 @@ const Footer = () => {
           <div className="grid grid-cols-3 gap-2 mt-2">
             <a href="#">
               <img
-                src="public/assets/img/footer/logo/img_logo_facebook.png"
+                src="/assets/img/footer/logo/img_logo_facebook.png"
                 alt="Facebook"
                 className="h-11 justify-center items-center "
               />
             </a>
             <a href="#">
               <img
-                src="public/assets/img/footer/logo/img_logo_linkin.png"
+                src="/assets/img/footer/logo/img_logo_linkin.png"
                 alt="LinkedIn"
                 className="h-11 justify-center items-center"
               />
             </a>
             <a href="#">
               <img
-                src="public/assets/img/footer/logo/img_logo_twitter.png"
+                src="/assets/img/footer/logo/img_logo_twitter.png"
                 alt="Twitter"
                 className="h-11 justify-center items-center"
               />
             </a>
             <a href="#">
               <img
-                src="public/assets/img/footer/logo/img_logo_tiktok.png"
+                src="/assets/img/footer/logo/img_logo_tiktok.png"
                 alt="TikTok"
                 className="h-11 justify-center items-center"
               />
             </a>
             <a href="#">
               <img
-                src="public/assets/img/footer/logo/img_logo_insta.png"
+                src="/assets/img/footer/logo/img_logo_insta.png"
                 alt="Instagram"
                 className="h-11 justify-center items-center"
               />
             </a>
             <a href="#">
               <img
-                src="public/assets/img/footer/logo/img_logo_telegram.png"
+                src="/assets/img/footer/logo/img_logo_telegram.png"
                 alt="Telegram"
                 className="h-11 justify-center items-center"
               />
@@ -145,18 +145,18 @@ const Footer = () => {
 
           <h3 className="font-bold mb-2 mt-4">TẢI ỨNG DỤNG TOPDEV NGAY</h3>
           <div className="flex justify-center space-x-2 mt-2">
-            <img src="public\assets\img\footer\img_qr_app.png" alt="QR Code" className="h-20" />
+            <img src="\assets\img\footer\img_qr_app.png" alt="QR Code" className="h-20" />
             <div>
               <a href="#">
                 <img
-                  src="public\assets\img\footer\img_appstore.png"
+                  src="\assets\img\footer\img_appstore.png"
                   alt="App Store"
                   className="h-8 mb-1"
                 />
               </a>
               <a href="#">
                 <img
-                  src="public\assets\img\footer\img_chplay.png"
+                  src="\assets\img\footer\img_chplay.png"
                   alt="Google Play"
                   className="h-8"
                 />
