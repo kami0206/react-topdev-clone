@@ -4,8 +4,10 @@ import NavBot from "./nav-bot"; // Import NavBot component
 
 function NavBar() {
   return (
-    <div className="w-full ">
-      <NavTop /> 
+    <div className="w-full">
+      <div className="hidden md:block">
+        <NavTop />
+      </div>
       <NavBot />
     </div>
   );

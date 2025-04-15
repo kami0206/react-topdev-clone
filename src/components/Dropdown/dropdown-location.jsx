@@ -1,28 +1,30 @@
-import React, { useState } from 'react'
-import Dropdown from './dropdown-defaul'
+import React from "react";
+import Dropdown from "./dropdown-defaul";
 
-const LocationDropdown = () => {
-  const [selectedLocation, setSelectedLocation] = useState('Vị Trí')
-
-  const handleSelect = (location) => {
-    setSelectedLocation(location)
-    console.log('Đã chọn:', location)
-  }
-
+const LocationDropdown = ({ value, onChange }) => {
   const locationOptions = [
-    { label: 'Vị Trí', onClick: () => handleSelect('Vị Trí') },
-    { label: 'Hà Nội', onClick: () => handleSelect('Hà Nội') },
-    { label: 'TP. Hồ Chí Minh', onClick: () => handleSelect('TP. Hồ Chí Minh') },
-    { label: 'Đà Nẵng', onClick: () => handleSelect('Đà Nẵng') },
-  ]
+    { label: "Vị Trí", value: "all", onClick: () => onChange("all") },
+    { label: "Hà Nội", value: "ha-noi", onClick: () => onChange("ha-noi") },
+    {
+      label: "Hồ Chí Minh",
+      value: "ho-chi-minh",
+      onClick: () => onChange("ho-chi-minh"),
+    },
+    { label: "Đà Nẵng", value: "da-nang", onClick: () => onChange("da-nang") },
+  ];
+
+  // Tìm label tương ứng với value để hiển thị
+  const selectedOption =
+    locationOptions.find((option) => option.value === value) ||
+    locationOptions[0];
 
   return (
     <Dropdown
       icon={<i className="fa-solid fa-location-dot" />}
-      label={<span>{selectedLocation}</span>}
+      label={<span>{selectedOption.label}</span>}
       options={locationOptions}
     />
-  )
-}
+  );
+};
 
-export default LocationDropdown
+export default LocationDropdown;

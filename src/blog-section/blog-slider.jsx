@@ -7,14 +7,7 @@ import { CardBlog, CardBlogSkeleton } from "../components/Blogs/index";
 const API_URL = "https://67ee152e4387d9117bbf4f07.mockapi.io/api/v1/blogs";
 
 // Component Nav cho mũi tên
-const Nav = ({ onClick, customClass, children }) => (
-  <div
-    onClick={onClick}
-    className={`rounded-full bg-transparent ring-primary/70 cursor-pointer hover:ring-primary ring-2 flex items-center justify-center ${customClass}`}
-  >
-    {children}
-  </div>
-);
+
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
@@ -123,8 +116,8 @@ const BlogList = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    beforeChange: handleBlogSliderChange, // Cập nhật currentSlide khi slide thay đổi
-    appendDots: customDotsWrapper, // Sử dụng customDotsWrapper
+    beforeChange: handleBlogSliderChange, 
+    appendDots: customDotsWrapper, 
     responsive: [
       {
         breakpoint: 1024,
@@ -139,7 +132,7 @@ const BlogList = () => {
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 576,
         settings: {
           slidesToShow: 1,
         },

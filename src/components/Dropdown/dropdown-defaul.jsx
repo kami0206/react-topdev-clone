@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const Dropdown = ({ icon, label, options = [], dark = false }) => {
+const Dropdown = ({ icon, label, options = [], dark = false, className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
 
@@ -24,10 +24,10 @@ const Dropdown = ({ icon, label, options = [], dark = false }) => {
   };
 
   return (
-    <div className="relative text-left" ref={dropdownRef}>
+    <div className={`relative text-left ${className}`} ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center w-full gap-3 px-4 py-2 border rounded-lg shadow-sm transition ${
+        className={`inline-flex items-center w-full gap-3 px-4 py-2 border rounded-lg shadow-sm transition ${
           dark
             ? "bg-black text-white hover:bg-gray-800"
             : "bg-white text-gray-800 hover:bg-gray-100"
@@ -40,7 +40,7 @@ const Dropdown = ({ icon, label, options = [], dark = false }) => {
 
       {isOpen && (
         <div
-          className={`absolute z-10 mt-2 w-44 right-0 origin-top-right rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 ${
+          className={`absolute z-10 mt-2 w-48 left-0 origin-top-left rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200 transform ${
             dark ? "bg-black text-white" : "bg-white text-black"
           }`}
         >
@@ -49,7 +49,7 @@ const Dropdown = ({ icon, label, options = [], dark = false }) => {
               <button
                 key={idx}
                 onClick={() => handleItemClick(option.onClick)}
-                className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+                className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100  ${
                   dark ? "hover:bg-gray-700" : ""
                 }`}
               >

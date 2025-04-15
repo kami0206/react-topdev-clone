@@ -1,13 +1,12 @@
 import React from "react";
 import UserDropdown from "../components/Dropdown/dropdown-user"; // component dropdown của bạn
 
- function NavBot() {
-
+function NavBot() {
   return (
-    <header className="sticky top-0 bg-white z-50 shadow">
-      <div className="max-w-[1376px] mx-auto flex justify-between items-center px-4 py-5">
+    <header className="sticky top-0 z-100 ">
+      <div className="max-w-[1376px] mx-auto flex  items-center px-4 py-5 justify-between ">
         {/* Logo */}
-        <div className="max-w-[210px] max-h-[40px]">
+        <div className="max-w-[210px] max-h-[40px] hidden md:block">
           <img
             src="/assets/img/header/img_logo.png"
             alt="TOPDev Logo"
@@ -16,7 +15,7 @@ import UserDropdown from "../components/Dropdown/dropdown-user"; // component dr
         </div>
 
         {/* Nav Right */}
-        <div className="flex items-center gap-4">
+        <div className="w-full md:w-auto flex flex-row-reverse md:flex-row items-center gap-4  justify-between">
           {/* Notification Bell */}
           <div className="relative">
             <img
