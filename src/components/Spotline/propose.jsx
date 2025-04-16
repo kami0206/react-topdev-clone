@@ -5,6 +5,7 @@ import CardList from "../Cards/card-list"
 import CardSkeleton from "../Cards/card-job-skeleton"
 
 const settings = {
+  
   infinite: true,
   speed: 500,
   slidesToShow: 1,

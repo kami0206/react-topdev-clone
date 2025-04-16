@@ -29,14 +29,13 @@ const BlogList = () => {
   }, []);
 
   // Hàm xử lý thay đổi slide
-  const handleBlogSliderChange = (current) => {
-    const slickInstance = blogCarouselRef.current?.innerSlider;
-    if (slickInstance) {
-      const slidesToScroll = slickInstance.props.slidesToScroll || 1;
-      const dotIndex = Math.floor(current / slidesToScroll);
-      setCurrentSlide(dotIndex);
-    }
-  };
+  function handleBlogSliderChange(_,current) {
+    const slickInstance = blogCarouselRef.current.innerSlider; // Lấy instance của Slick Carousel
+    const slidesToScroll = slickInstance.props.slidesToScroll || 1; // Lấy slidesToScroll từ instance
+    const dotIndex = Math.floor(current / slidesToScroll); // Tính toán dot index
+    setCurrentSlide(dotIndex); // Cập nhật trạng thái dot hiện tại
+
+}
 
   // Nút điều hướng trái
   const blogLeftNav = (
@@ -111,6 +110,7 @@ const BlogList = () => {
 
   // Cấu hình slider
   const sliderSettings = {
+    arrows: false,
     dots: true,
     infinite: true,
     speed: 500,

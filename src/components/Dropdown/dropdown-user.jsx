@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Dropdown from "./dropdown-defaul";
-import LoginModal from "../Modal/modal"; 
+import { LoginModal, LogoutConfirmModal } from "../Modal/index";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button/button";
 
 const UserDropdown = () => {
   const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false);
+  const [showConfirmLogout, setShowConfirmLogout] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId"); 
+    const userId = localStorage.getItem("userId");
     if (!userId) {
       setUser(null);
       return;
@@ -33,9 +34,10 @@ const UserDropdown = () => {
     fetchUser();
   }, []);
 
-  const handleLogout = () => {
+  const logout = () => {
     localStorage.removeItem("userId");
     setUser(null);
+    setShowConfirmLogout(false);
   };
 
   if (!user) {
@@ -44,7 +46,7 @@ const UserDropdown = () => {
         <Button
           title="Đăng nhập"
           onClick={() => setShowLogin(true)}
-          variant="gradientWrapper" 
+          variant="gradientWrapper"
         />
 
         <LoginModal
@@ -57,28 +59,36 @@ const UserDropdown = () => {
   }
 
   return (
-    <Dropdown
-      icon={
-        <img src={user.avatar} alt="User" className="w-8 h-8 rounded-full" />
-      }
-      label={
-        <div className="text-left">
-          <p className="text-xs font-medium flex items-center gap-1">
-            {user.name}
-            {user.verified && (
-              <i className="fa-solid fa-circle-check text-blue-500"></i>
-            )}
-          </p>
-          <p className="text-xs font-bold text-white">UX/UI</p>
-        </div>
-      }
-      options={[
-        { label: "Trang cá nhân", onClick: () => navigate("/profile") },
-        { label: "Cài đặt", onClick: () => navigate("/settings") },
-        { label: "Đăng xuất", onClick: handleLogout },
-      ]}
-      dark
-    />
+    <>
+      <Dropdown
+        icon={
+          <img src={user.avatar} alt="User" className="w-8 h-8 rounded-full" />
+        }
+        label={
+          <div className="text-left">
+            <p className="text-xs font-medium flex items-center gap-1">
+              {user.name}
+              {user.verified && (
+                <i className="fa-solid fa-circle-check text-blue-500"></i>
+              )}
+            </p>
+            <p className="text-xs font-bold text-white">UX/UI</p>
+          </div>
+        }
+        options={[
+          { label: "Trang cá nhân", onClick: () => navigate("/profile") },
+          { label: "Cài đặt", onClick: () => navigate("/settings") },
+          { label: "Đăng xuất", onClick: () => setShowConfirmLogout(true) },
+        ]}
+        dark
+      />
+
+      <LogoutConfirmModal
+        isOpen={showConfirmLogout}
+        onClose={() => setShowConfirmLogout(false)}
+        onConfirm={logout}
+      />
+    </>
   );
 };
 

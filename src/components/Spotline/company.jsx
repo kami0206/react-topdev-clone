@@ -3,6 +3,7 @@ import companyLogos from "../Carousel/carousel-img";
 
 const Company = () => {
   const settings = {
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 6,

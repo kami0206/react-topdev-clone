@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { Card, CardList, CardSkeleton } from "@/components/Cards/index";
 import { NextArrow, PrevArrow } from "@/components/Carousel/index";
 const settings = {
+  arrows: true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,

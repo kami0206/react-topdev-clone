@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import companyLogos from "../components/Carousel/carousel-img";
-
 const TopCompany = () => {
   const settings = {
     dots: false,
@@ -11,7 +10,9 @@ const TopCompany = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: true,
+    arrows: false,
+ 
+  
     responsive: [
       {
         breakpoint: 1024,

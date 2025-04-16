@@ -117,7 +117,7 @@ const HeroSection = () => {
                 title="Tìm kiếm"
                 onClick={handleSearch}
                 variant="dark"
-                className="w-full py-3"
+                className="w-full py-2"
               />
             </div>
           </div>
